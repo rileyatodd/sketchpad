@@ -1,16 +1,20 @@
 import * as React from 'karet'
 import * as U from 'karet.util'
+import K from 'kefir.combines'
+import * as R from 'ramda'
+import * as L from 'partial.lenses'
 
-const App = ({ message = U.atom("Hey"), time = U.atom(null) }) => (
+import GraphicsArea from './GraphicsArea.js'
+import ControlsArea from './ControlsArea.js'
+
+import {atom} from './state'
+
+const App = ({ state = atom }) => (
   <div>
-    <div>{message}</div>
-    <div><button onClick={getDbTime}>Check DB time</button></div>
-    <div>db time: {time}</div>
+    <h1>Hello</h1>
+    <GraphicsArea {...{state}}/>
+    <ControlsArea  {...{state}}/>
   </div>
 )
-
-const getDbTime = () => fetch('http://localhost:3001/time')
-  .then(res => res.json())
-  .then(({ now }) => window.rootAtom.view('time').set(now))
 
 export default App

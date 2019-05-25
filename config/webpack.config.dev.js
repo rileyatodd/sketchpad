@@ -41,7 +41,7 @@ const postCssLoader = {
       }),
     ],
   },
-},
+}
 
 // This is the development configuration.
 // It is focused on developer experience and fast rebuilds.
