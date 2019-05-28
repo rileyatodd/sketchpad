@@ -1,7 +1,7 @@
 import * as React from 'karet'
 import * as U from 'karet.util'
 import K from 'kefir.combines'
-import P5Wrapper from 'react-p5-wrapper'
+import P5Wrapper from './lib/P5Wrapper.js'
 import sketch from './sketches/boids/boids'
 
 const GraphicsArea = ({ state }) => (
